@@ -12,12 +12,12 @@ const locationReducer = (state, action) => {
 const startRecording = (dispatch) => () => {};
 const stopRecording = (dispatch) => () => {};
 const addLocation = (dispatch) => (location) => {
-
+  console.log('Hi, Gicho!')
   dispatch({ type: 'add_current_location', payload: location });
 };
 
 export const { Context, Provider } = createDataContext(
   locationReducer,
   { startRecording, stopRecording, addLocation },
-  { recording: false, lcations: [], currentLocation: null }
+  { recording: false, lcations: [], currentLocation: null },
 );
