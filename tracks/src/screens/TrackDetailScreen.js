@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import { Context as TrackContext } from '../context/TrackContext';
 import MapView, { Polyline } from 'react-native-maps';
+import TrackListScreen from './TrackListScreen';
 
 const TrackDetailScreen = ({ navigation }) => {
   const { state } = useContext(TrackContext);
@@ -25,7 +26,11 @@ const TrackDetailScreen = ({ navigation }) => {
         <Polyline coordinates={track.locations.map((loc) => loc.coords)} />
       </MapView>
     </>
-  )
+  );
+};
+
+TrackListScreen.navigationOptions = {
+  title: 'Tracks',
 };
 
 const styles = StyleSheet.create({
